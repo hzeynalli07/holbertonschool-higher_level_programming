@@ -11,6 +11,7 @@ def fizzbuzz():
             print("Buzz", end="")
         else:
             print("{}".format(i), end="")
-        
-        # Həmişə boşluq çap edirik (nümunədə sonda da boşluq var)
-        print(" ", end="")
+        if i != 100:
+            print(" ", end="")
+        else:
+            print(" ", end="")
