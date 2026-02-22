@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module provides a function that adds two integers.
-The function ensures that the inputs are either integers or floats.
+The inputs must be integers or floats, otherwise a TypeError is raised.
 """
 
 
@@ -11,28 +11,24 @@ def add_integer(a, b=98):
 
     Args:
         a: The first number (int or float).
-        b: The second number (int or float), defaults to 98.
+        b: The second number (int or float).
 
     Returns:
-        The integer sum of a and b.
+        The sum of a and b as an integer.
 
     Raises:
-        TypeError: If a or b are not integers or floats, or are NaN.
+        TypeError: If a or b are not integers or floats, or are NaN/Inf.
     """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    # NaN və ya Infinity yoxlaması üçün float metodu istifadə edirik
-    try:
-        a = int(a)
-    except (ValueError, OverflowError):
+    # NaN və Infinity yoxlaması
+    # NaN özü-özünə bərabər olmayan yeganə dəyərdir (a != a)
+    if a != a or a == float('inf') or a == float('-inf'):
         raise TypeError("a must be an integer")
-
-    try:
-        b = int(b)
-    except (ValueError, OverflowError):
+    if b != b or b == float('inf') or b == float('-inf'):
         raise TypeError("b must be an integer")
 
-    return a + b
+    return int(a) + int(b)
