@@ -10,7 +10,7 @@ def text_indentation(text):
     Prints a text with 2 new lines after each '.', '?', and ':'.
 
     Args:
-        text: The string to be formatted.
+        text (str): The string to be formatted.
 
     Raises:
         TypeError: If text is not a string.
@@ -18,24 +18,18 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    # İşarələri müəyyən edirik
-    delimiters = [".", "?", ":"]
-    
-    # Simvollar üzərində gəzirik
-    i = 0
-    # Mətnin başındakı boşluqları təmizləmək üçün flag
-    while i < len(text) and text[i] == " ":
-        i += 1
+    # Mətnin başındakı və sonundakı lazımsız boşluqları kəsirik
+    c = 0
+    while c < len(text) and text[c] == ' ':
+        c += 1
 
-    while i < len(text):
-        print(text[i], end="")
-        if text[i] in delimiters or text[i] == "\n":
-            if text[i] in delimiters:
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
                 print("\n")
-            
-            # Növbəti sətirin əvvəlindəki boşluqları atlayırıq
-            i += 1
-            while i < len(text) and text[i] == " ":
-                i += 1
+            c += 1
+            while c < len(text) and text[c] == ' ':
+                c += 1
             continue
-        i += 1
+        c += 1
