@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
 This module provides a function that adds two integers.
-Validation is performed to handle floats, infinity, and NaN values.
+It handles edge cases like infinity and NaN by catching internal errors.
 """
 
 
 def add_integer(a, b=98):
     """
-    Adds two integers or floats after casting them to integers.
+    Adds two integers or floats.
 
     Args:
         a: The first number.
@@ -17,25 +17,23 @@ def add_integer(a, b=98):
         The sum as an integer.
 
     Raises:
-        TypeError: If a or b are not integers, floats, or are NaN/Inf.
+        TypeError: If a or b are not integers or floats, or cannot be cast.
     """
-    # Tip yoxlaması
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    # NaN yoxlaması (a != a yalnız NaN üçün True-dur)
-    if a != a:
+    try:
+        # Cast əməliyyatını try bloku daxilində edirik.
+        # Əgər NaN və ya Infinity gələrsə, Python burada xəta fırladacaq.
+        a = int(a)
+    except (ValueError, OverflowError):
         raise TypeError("a must be an integer")
-    if b != b:
+
+    try:
+        b = int(b)
+    except (ValueError, OverflowError):
         raise TypeError("b must be an integer")
 
-    # Infinity (sonsuzluq) yoxlaması
-    if a == float('inf') or a == float('-inf'):
-        raise TypeError("a must be an integer")
-    if b == float('inf') or b == float('-inf'):
-        raise TypeError("b must be an integer")
-
-    # Bütün yoxlamalardan keçdikdən sonra int-ə çeviririk
-    return int(a) + int(b)
+    return a + b
