@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
 This module provides a function that adds two integers.
-Validation is done strictly before any type casting to prevent overflow.
+Validation is performed to handle floats, infinity, and NaN values.
 """
 
 
 def add_integer(a, b=98):
     """
-    Adds two integers or floats.
+    Adds two integers or floats after casting them to integers.
 
     Args:
         a: The first number.
@@ -17,23 +17,25 @@ def add_integer(a, b=98):
         The sum as an integer.
 
     Raises:
-        TypeError: If a or b are not integers, floats, or are invalid numbers.
+        TypeError: If a or b are not integers, floats, or are NaN/Inf.
     """
-    # 1. Tip yoxlaması (isinstance bəzən yetərli olmaya bilər, type istifadə edək)
-    if type(a) not in [int, float]:
+    # Tip yoxlaması
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if type(b) not in [int, float]:
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    # 2. NaN və Infinity yoxlaması (HEÇ BİR riyazi əməliyyat etmədən)
-    # Rəqəmi string-ə çevirib yoxlamaq ən qəti yoldur, çünki casting xətası vermir
-    if str(a) in ["nan", "inf", "-inf"]:
+    # NaN yoxlaması (a != a yalnız NaN üçün True-dur)
+    if a != a:
         raise TypeError("a must be an integer")
-    if str(b) in ["nan", "inf", "-inf"]:
+    if b != b:
         raise TypeError("b must be an integer")
 
-    # 3. Yalnız indi casting edirik
-    a_int = int(a)
-    b_int = int(b)
+    # Infinity (sonsuzluq) yoxlaması
+    if a == float('inf') or a == float('-inf'):
+        raise TypeError("a must be an integer")
+    if b == float('inf') or b == float('-inf'):
+        raise TypeError("b must be an integer")
 
-    return a_int + b_int
+    # Bütün yoxlamalardan keçdikdən sonra int-ə çeviririk
+    return int(a) + int(b)
