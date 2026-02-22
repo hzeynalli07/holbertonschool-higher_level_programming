@@ -1,34 +1,38 @@
 #!/usr/bin/python3
 """
 This module provides a function that adds two integers.
-The inputs must be integers or floats, otherwise a TypeError is raised.
+Check for type, infinity and NaN before casting.
 """
 
 
 def add_integer(a, b=98):
     """
-    Adds two integers or floats after casting them to integers.
+    Adds two integers or floats.
 
     Args:
-        a: The first number (int or float).
-        b: The second number (int or float).
+        a: first number
+        b: second number, defaults to 98
 
     Returns:
-        The sum of a and b as an integer.
-
-    Raises:
-        TypeError: If a or b are not integers or floats, or are NaN/Inf.
+        The addition of a and b as an integer
     """
-    if not isinstance(a, (int, float)):
+    if type(a) not in [int, float]:
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
+    if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
 
-    # NaN və Infinity yoxlaması
-    # NaN özü-özünə bərabər olmayan yeganə dəyərdir (a != a)
-    if a != a or a == float('inf') or a == float('-inf'):
+    # NaN və Infinity yoxlaması - casting-dən əvvəl
+    # (a * 0 != 0) yoxlaması həm NaN, həm də Inf-i eyni anda tutur!
+    try:
+        if a * 0 != 0:
+            raise TypeError("a must be an integer")
+    except (ValueError, OverflowError):
         raise TypeError("a must be an integer")
-    if b != b or b == float('inf') or b == float('-inf'):
+
+    try:
+        if b * 0 != 0:
+            raise TypeError("b must be an integer")
+    except (ValueError, OverflowError):
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)
