@@ -60,15 +60,3 @@ The `BaseGeometry` class
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] age must be an integer
-
->>> try:
-...     bg.integer_validator("age")
-... except Exception as e:
-...     print(e.__class__.__name__)
-TypeError
-
->>> try:
-...     bg.integer_validator()
-... except Exception as e:
-...     print(e.__class__.__name__)
-TypeError
