@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
 Module for Shape, Circle and Rectangle classes.
-Provides a shape_info function to display area and perimeter.
 """
 import math
 from abc import ABC, abstractmethod
@@ -9,7 +8,6 @@ from abc import ABC, abstractmethod
 
 class Shape(ABC):
     """Abstract class Shape"""
-
     @abstractmethod
     def area(self):
         """Abstract method area"""
@@ -23,7 +21,6 @@ class Shape(ABC):
 
 class Circle(Shape):
     """Circle class inheriting from Shape"""
-
     def __init__(self, radius):
         """Initializes Circle with radius"""
         self.radius = radius
@@ -39,7 +36,6 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """Rectangle class inheriting from Shape"""
-
     def __init__(self, width, height):
         """Initializes Rectangle with width and height"""
         self.width = width
@@ -47,11 +43,11 @@ class Rectangle(Shape):
 
     def area(self):
         """Returns the area of the rectangle"""
-        return float(self.width * self.height)
+        return self.width * self.height
 
     def perimeter(self):
         """Returns the perimeter of the rectangle"""
-        return float(2 * (self.width + self.height))
+        return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
