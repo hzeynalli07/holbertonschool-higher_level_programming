@@ -1,60 +1,59 @@
 #!/usr/bin/python3
 """
-This module defines an abstract class Shape and its subclasses Circle and Rectangle.
-It also includes a function shape_info to demonstrate duck typing.
+Shapes and Duck Typing
 """
-from abc import ABC, abstractmethod
 import math
+from abc import ABC, abstractmethod
 
 
 class Shape(ABC):
-    """Abstract class Shape with area and perimeter abstract methods."""
+    """Abstract class Shape"""
 
     @abstractmethod
     def area(self):
-        """Abstract method to calculate the area of a shape."""
+        """Abstract method area"""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Abstract method to calculate the perimeter of a shape."""
+        """Abstract method perimeter"""
         pass
 
 
 class Circle(Shape):
-    """Circle class that inherits from Shape."""
+    """Circle class"""
 
     def __init__(self, radius):
-        """Initialize Circle with a radius."""
+        """Initialize Circle"""
         self.radius = radius
 
     def area(self):
-        """Calculate and return the area of the circle."""
-        return math.pi * (self.radius ** 2)
+        """Return circle area"""
+        return math.pi * self.radius ** 2
 
     def perimeter(self):
-        """Calculate and return the perimeter of the circle."""
+        """Return circle perimeter"""
         return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
-    """Rectangle class that inherits from Shape."""
+    """Rectangle class"""
 
     def __init__(self, width, height):
-        """Initialize Rectangle with width and height."""
+        """Initialize Rectangle"""
         self.width = width
         self.height = height
 
     def area(self):
-        """Calculate and return the area of the rectangle."""
+        """Return rectangle area"""
         return self.width * self.height
 
     def perimeter(self):
-        """Calculate and return the perimeter of the rectangle."""
+        """Return rectangle perimeter"""
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
-    """Print the area and perimeter of any object with area and perimeter methods."""
+    """Print shape info"""
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
