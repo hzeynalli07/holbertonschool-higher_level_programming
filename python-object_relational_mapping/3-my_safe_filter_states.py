@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Safe from MySQL injections"""
+"""Safe from MySQL injections using parameterized queries"""
 import MySQLdb
 import sys
 
