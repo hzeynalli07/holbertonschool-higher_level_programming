@@ -4,3 +4,4 @@ This project focuses on DOM manipulation using JavaScript.
 - Task 2: Add .red class to header when #red_header is clicked.
 - Task 3: Toggle between .red and .green classes on header.
 - Task 4: Add <li>Item</li> to .my_list when #add_item is clicked.
+- Task 6: Fetch Star Wars character name and display it in #character.
