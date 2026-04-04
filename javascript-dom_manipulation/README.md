@@ -6,3 +6,4 @@ This project focuses on DOM manipulation using JavaScript.
 - Task 4: Add <li>Item</li> to .my_list when #add_item is clicked.
 - Task 6: Fetch Star Wars character name and display it in #character.
 - Task 7: Fetch and list all Star Wars movie titles in #list_movies.
+- Task 8: Fetch and display 'hello' translation in #hello from head.
