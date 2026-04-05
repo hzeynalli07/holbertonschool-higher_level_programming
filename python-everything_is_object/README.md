@@ -24,3 +24,4 @@ This project explores how Python handles objects, mutability, and memory referen
 - Task 22: Identification of a single element in parentheses (not a tuple).
 - Task 21: Identification of a tuple with multiple elements.
 - Task 23: Identification of a singleton tuple (with comma).
+- Task 26: Identity check for empty tuples (True, Python reuses the same empty tuple object).
