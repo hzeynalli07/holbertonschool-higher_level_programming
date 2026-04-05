@@ -21,3 +21,4 @@ This project explores how Python handles objects, mutability, and memory referen
 - Task 18: Assigning a new value to a local variable inside a function doesn't affect the global variable.
 - Task 19: Function to return a copy of a list using slicing.
 - Task 20: Identification of an empty tuple.
+- Task 22: Identification of a single element in parentheses (not a tuple).
