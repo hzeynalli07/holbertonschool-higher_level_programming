@@ -8,3 +8,4 @@ This project explores how Python handles objects, mutability, and memory referen
 - Task 6: Value equality (s1 == s2) for strings.
 - Task 7: Identity equality (s1 is s2) for strings.
 - Task 8: Value equality (s1 == s2) for identical strings.
+- Task 9: Identity equality (s1 is s2) for identical string literals.
