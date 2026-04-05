@@ -18,3 +18,4 @@ This project explores how Python handles objects, mutability, and memory referen
 - Task 19: Function to return a copy of a list using slicing.
 - Task 15: Concatenation (l1 = l1 + [4]) creates a new object, leaving l2 unchanged.
 - Task 17: Lists are mutable; modifying inside a function affects the original.
+- Task 18: Assigning a new value to a local variable inside a function doesn't affect the global variable.
