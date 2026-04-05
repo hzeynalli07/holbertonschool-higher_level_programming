@@ -28,3 +28,4 @@ This project explores how Python handles objects, mutability, and memory referen
 - Task 27: List concatenation creates a new object with a different ID.
 - Task 25: Identity check for two identical tuples (False, different objects).
 - Task 24: Identity check for small integers in parentheses (True due to interning).
+- Task 28: In-place addition (+=) on a list modifies the original object, keeping the same ID.
