@@ -26,3 +26,4 @@ This project explores how Python handles objects, mutability, and memory referen
 - Task 23: Identification of a singleton tuple (with comma).
 - Task 26: Identity check for empty tuples (True, Python reuses the same empty tuple object).
 - Task 27: List concatenation creates a new object with a different ID.
+- Task 25: Identity check for two identical tuples (False, different objects).
