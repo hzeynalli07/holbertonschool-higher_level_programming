@@ -16,3 +16,4 @@ This project explores how Python handles objects, mutability, and memory referen
 - Task 13: Identity equality (l1 is l2) after assignment (l2 = l1).
 - Task 14: Mutation of shared list reference.
 - Task 19: Function to return a copy of a list using slicing.
+- Task 15: Concatenation (l1 = l1 + [4]) creates a new object, leaving l2 unchanged.
