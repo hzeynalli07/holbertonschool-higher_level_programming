@@ -12,3 +12,4 @@ This project explores how Python handles objects, mutability, and memory referen
 - Task 10: Value equality (l1 == l2) for identical lists.
 - Task 9: Identity equality (s1 is s2) for identical string literals.
 - Task 11: Identity equality (l1 is l2) for identical lists.
+- Task 12: Value equality (l1 == l2) after assignment (l2 = l1).
